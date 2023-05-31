@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    
+    header {
+      background-image: url("https://wallpapercave.com/wp/wp8777315.jpg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 20px;
+      padding-bottom: 300px;
+      text-align: center;
+      height: 120%; /* Increased height by 20% */
+      box-sizing: border-box; /* Ensure padding is included in the height */
+    }
+    
+    main {
+      margin: 0 auto;
+      max-width: 500px;
+      padding: 20px;
+    }
+    
+    h1 {
+      padding-top: 10px;
+      margin-top: 40px; /* Added margin to prevent overlap with header */
+    }
+    
+    p {
+      color: #666;
+    }
+    
+    .input-label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .input-field {
+      padding: 5px;
+      width: 200px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background-color: #666;
+    }
+    
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+      /* Additional CSS for the image */
+      .image-container {
+      padding-top: 20px;
+      text-align: center;
+      width: 70%; /* Set width to 100% to match the calculator's width */
+      box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+    
+    .rounded-image {
+      border-radius: 10px;
+      width: 70%; /* Set width to 100% to match the image container's width */
+    }
+  </style>
+
+<body>
+  
+  <header>
+    
+  </header>
+  
+  <main>
+  
+
+    <h1>Emissions Calculator</h1>
+    <h2>Calculate Emissions</h2>
+
+    
+    
+    <label class="input-label" for="numFlights">Number of Flights Taken:</label>
+    <input class="input-field" type="number" id="numFlights" min="1" required>
+    
+    <button class="btn" onclick="calculateEmissions()">Calculate</button>
+    
+    <p id="result"></p>
+
+    <!-- Image container -->
+    <div class="image-container">
+      <img class="rounded-image" src="https://www.midlandsaerospace.org.uk/images/gallagher-logo-jan21.jpg" alt="Gallagher Logo">
+    </div>
+    
+    <script>
+      // JavaScript code
+      function calculateEmissions() {
+        var numFlights = document.getElementById("numFlights").value;
+        var averageFlightLength = 1943.6; // in kilometers
+        var averageEmissionsPerKm = 255; // in grams
+        
+        var emissions = (averageFlightLength * numFlights * averageEmissionsPerKm) / 1000; // convert grams to kilograms
+        
+        var treesNeeded = emissions / 2.75; // emissions sequestered by a 10-year-old tree
+        
+        document.getElementById("result").textContent = "Total Emissions: " + emissions.toFixed(2) + " kg";
+        document.getElementById("result").textContent += "\nTrees Needed: " + Math.ceil(treesNeeded);
+      }
+    </script>
+  </main>
+</body>
+</html>
