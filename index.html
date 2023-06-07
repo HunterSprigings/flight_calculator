@@ -1,125 +1,210 @@
 <!DOCTYPE html>
 <html>
-  <style>
-    /* CSS Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f2f2f2;
-    }
-    
-    header {
-      background-image: url("https://cdn.suwalls.com/wallpapers/aircraft/white-airplane-in-the-sky-53630-1920x1080.jpg");
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      padding: 20px;
-      padding-bottom: 300px;
-      text-align: center;
-      height: 120%; /* Increased height by 20% */
-      box-sizing: border-box; /* Ensure padding is included in the height */
-    }
-    
-    main {
-      margin: 0 auto;
-      max-width: 500px;
-      padding: 20px;
-    }
-    
-    h1 {
-      padding-top: 10px;
-      margin-top: 40px; /* Added margin to prevent overlap with header */
-    }
-    
-    p {
-      color: #666;
-    }
-    
-    .input-label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    
-    .input-field {
-      padding: 5px;
-      width: 200px;
-    }
-    
-    .btn {
-      display: inline-block;
-      background-color: #333;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    .btn:hover {
-      background-color: #666;
-    }
-    
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-    }
+  <head>
+    <style>
+      /* CSS Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Light-Sky-Blue-Solid-Color-Background.jpg");
+        background-size: cover;
+        color: white; /* Set text color to white */
+      }
+      
+      header {
+        background-image: url("https://cdn.suwalls.com/wallpapers/aircraft/white-airplane-in-the-sky-53630-1920x1080.jpg");
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 20px;
+        padding-bottom: 300px;
+        text-align: center;
+        height: 120%; /* Increased height by 20% */
+        box-sizing: border-box; /* Ensure padding is included in the height */
+        border-radius: 0% 0% 7% 7% /* Add curved edges */;
+      }
+      
+      main {
+        padding: 20px;
+      }
+      
+      p {
+        color: white; /* Set text color to white */
+      }
+      
+      .input-label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .input-field {
+        padding: 5px;
+        width: 200px;
+      }
+      
+      .btn {
+        display: inline-block;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .btn:hover {
+        background-color: #666;
+      }
+      
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
 
       /* Additional CSS for the image */
       .image-container {
-      padding-top: 20px;
-      text-align: center;
-      width: 70%; /* Set width to 100% to match the calculator's width */
-      box-sizing: border-box; /* Ensure padding is included in the width */
-    }
-    
-    .rounded-image {
-      border-radius: 10px;
-      width: 70%; /* Set width to 100% to match the image container's width */
-    }
-  </style>
-
-<body>
-  
-  <header>
-    
-  </header>
-  
-  <main>
-  
-
-    <h1>Emissions Calculator</h1>
-    <h2>Calculate Emissions</h2>
-
-    
-    
-    <label class="input-label" for="numFlights">Number of Flights Taken:</label>
-    <input class="input-field" type="number" id="numFlights" min="1" required>
-    
-    <button class="btn" onclick="calculateEmissions()">Calculate</button>
-    
-    <p id="result"></p>
-
-    <!-- Image container -->
-    <div class="image-container">
-      <img class="rounded-image" src="https://www.midlandsaerospace.org.uk/images/gallagher-logo-jan21.jpg" alt="Gallagher Logo">
-    </div>
-    
-    <script>
-      // JavaScript code
-      function calculateEmissions() {
-        var numFlights = document.getElementById("numFlights").value;
-        var averageFlightLength = 1943.6; // in kilometers
-        var averageEmissionsPerKm = 255; // in grams
-        
-        var emissions = (averageFlightLength * numFlights * averageEmissionsPerKm) / 1000; // convert grams to kilograms
-        
-        var treesNeeded = emissions / 2.75; // emissions sequestered by a 10-year-old tree
-        
-        document.getElementById("result").textContent = "Total Emissions: " + emissions.toFixed(2) + " kg";
-        document.getElementById("result").textContent += "\nTrees Needed: " + Math.ceil(treesNeeded);
+        padding-top: 20px;
+        text-align: center;
+        box-sizing: border-box; /* Ensure padding is included in the width */
+        width: 30%;
       }
-    </script>
-  </main>
-</body>
+      
+      .rounded-image {
+        border-radius: 10px;
+        max-width: 100%; /* Set the maximum width to 100% */
+        width: 200px; /* Set width to auto to maintain aspect ratio */
+      }
+      
+      /* Additional CSS for the flexbox */
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 4%;
+      }
+      .flex-item {
+        flex-grow: 3;
+        max-width: 50% ;
+        padding-left: 7%;
+      }
+
+      .flex-item-2 {
+        flex-grow: 1;
+        padding-left: 10%;
+      }
+  
+      .footer_container{
+        text-align: center;
+        padding-top: 3%;
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+      
+      /* Media Query */
+      @media (max-width: 1200px) {
+        .flex-container {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .flex-item,
+        .flex-item-2 {
+          padding-left: 0;
+        }
+        
+        .flex-item:first-child {
+          flex-basis: 100%;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <header>
+    
+    </header>
+    
+    <main>
+      <div class="flex-container">
+        <div class="flex-item">
+          <h1>Our Mission to Reduce Emissions</h1>
+          <p>We are the Gallagher Intern Class at 181 University Ave in Toronto! We are a passionate group of individuals who understand the significance of air travel, especially within the insurance industry. However, we also recognize the alarming levels of carbon emissions associated with this mode of transportation, which directly contribute to the destruction of our environment.</p>
+          <p>To address this issue, we have developed a Carbon Calculator app. With just a few simple steps, you can determine the amount of CO2 you have emitted through air travel in the past year and the number of trees required to offset it.</p>
+          <p>For every tree equivalent, we receive in donations, we will plant the corresponding number of trees. Together, we can actively contribute to reforestation efforts and combat climate change.</p>
+        </div>
+        
+        <div class="flex-item-2">
+          <label><h2>Calculate Emissions</h2></label>
+        
+          <label class="input-label" for="numFlights">Number of Flights Taken:</label>
+          <input class="input-field" type="number" id="numFlights" min="1" required>
+        
+          <button class="btn" onclick="calculateEmissions()">Calculate</button>
+        
+          <p id="result"></p>
+        
+      </div>
+      
+      <script>
+          // JavaScript code
+        function calculateEmissions() {
+          var numFlights = document.getElementById("numFlights").value;
+          var averageFlightLength = 1214.35; // in kilometers
+          var averageEmissionsPerKm = 255; // in grams
+          
+          var emissions = (averageFlightLength * numFlights * averageEmissionsPerKm) / 1000; // convert grams to kilograms
+          
+          var treesNeeded = emissions / 1.247; // emissions sequestered by a 10-year-old tree
+          
+          document.getElementById("result").textContent = "Total Carbon Emissions: " + emissions.toFixed(2) + " kg" ;
+          document.getElementById("result").innerHTML += "<br>Trees Needed: " + Math.ceil(treesNeeded);
+         
+          // Adding the "Donate Here!" link with icon
+          var donateLink = document.createElement("a");
+          donateLink.href = "https://www.eventbrite.ca/e/our-mission-to-reduce-emissions-tickets-652961022997";
+          donateLink.style.color = "white"; // Change hyperlink color to white
+          donateLink.style.fontSize = "20px"; // Set font size to 20 pixels
+
+          // Adding the icon
+          var iconImg = document.createElement("img");
+          iconImg.src = "http://cdn.onlinewebfonts.com/svg/img_498772.png";
+          iconImg.style.verticalAlign = "bottom"; // Align the icon's bottom with the bottom of the text
+          iconImg.style.height = "35px"; // Set the height of the icon to 20 pixels
+          iconImg.style.width = "auto"; // Maintain the aspect ratio of the icon
+          iconImg.style.marginRight = "5px"; // Add a small margin between the icon and text
+          donateLink.appendChild(iconImg);
+
+          donateLink.appendChild(document.createTextNode("Donate Here!"));
+          document.getElementById("result").appendChild(document.createElement("br")); // Add a line break
+          document.getElementById("result").appendChild(document.createElement("br")); // Add another line break
+          document.getElementById("result").appendChild(donateLink);
+        }
+      </script>
+    </main>
+    <footer>
+      <!-- Calculation and Sources -->
+      <div class = "footer_container">
+        <p style="font-style: italic; font-size: 10px; color: grey; width: 100%;">
+          Calculation: 
+          <br>
+          [ (Average Domestic Flight Length) * (Average kg of Carbon Emissions Emissions Per Domestic Flight km) ] / [Average emissions collected from a 30 year old White Pine Annually] = [(1214.35)*(.255)] / [1.247]<br>
+          <br>
+          The average domestic flight length in the US is 1214.35 km (BTS, 2018) and the average emissions per km of domestic flight is 255g per km (Our World In Data, 2018). The average Caron captured from a 30-year-old native Canadian white pine tree is 1.247 kg annually (Tree Plantation, N.A.).<br>
+          <br>
+          Sources:<br>
+          BTS. (2018). Bureau of Transportation Statistics. BTS. https://www.transtats.bts.gov/
+          <br>
+          Our World In Data. (2018). Carbon footprint of travel per kilometer. Our World in Data. https://ourworldindata.org/grapher/carbon-footprint-travel-mode
+          <br>
+          Tree Plantation. (n.d.). Calculate how much carbon a tree capture. Tree Plantation. https://treeplantation.com/tree-carbon-calculator.html
+        </p stlye= "padding-bottom: 15px">
+        <img class="rounded-image" src="https://www.midlandsaerospace.org.uk/images/gallagher-logo-jan21.jpg" alt="Gallagher Logo">
+      </div>
+    </footer>
+  
+  </body>
 </html>
