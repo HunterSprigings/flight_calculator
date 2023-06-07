@@ -7,7 +7,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Light-Sky-Blue-Solid-Color-Background.jpg");
+        background-color: #70ACDF;
         background-size: cover;
         color: white; /* Set text color to white */
       }
@@ -22,11 +22,12 @@
         text-align: center;
         height: 120%; /* Increased height by 20% */
         box-sizing: border-box; /* Ensure padding is included in the height */
-        border-radius: 0% 0% 7% 7% /* Add curved edges */;
+        
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12), 0 14px 4px 0 rgba(0, 0, 0, 0.12);
       }
       
       main {
-        padding: 20px;
+        padding: 10px;
       }
       
       p {
@@ -49,7 +50,7 @@
         color: #fff;
         padding: 10px 20px;
         text-decoration: none;
-        border-radius: 4px;
+        border-radius: 10px;
         cursor: pointer;
       }
       
@@ -64,7 +65,7 @@
 
       /* Additional CSS for the image */
       .image-container {
-        padding-top: 20px;
+        padding-top: 2px;
         text-align: center;
         box-sizing: border-box; /* Ensure padding is included in the width */
         width: 30%;
@@ -82,24 +83,25 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding-top: 4%;
+        padding-top: 3%;
       }
       .flex-item {
         flex-grow: 3;
         max-width: 50% ;
-        padding-left: 7%;
+        padding-left: 4%;
       }
 
       .flex-item-2 {
         flex-grow: 1;
-        padding-left: 10%;
+        padding-left: 4%;
       }
   
       .footer_container{
         text-align: center;
         padding-top: 3%;
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: 30%;
+        padding-right: 30%;
+        padding-bottom: 2%;
       }
       
       /* Media Query */
@@ -131,10 +133,10 @@
     <main>
       <div class="flex-container">
         <div class="flex-item">
-          <h1>Our Mission to Reduce Emissions</h1>
+          <h1 style = "font-weight: bolder;">Our Mission to Reduce Emissions</h1>
           <p>We are the Gallagher Intern Class at 181 University Ave in Toronto! We are a passionate group of individuals who understand the significance of air travel, especially within the insurance industry. However, we also recognize the alarming levels of carbon emissions associated with this mode of transportation, which directly contribute to the destruction of our environment.</p>
           <p>To address this issue, we have developed a Carbon Calculator app. With just a few simple steps, you can determine the amount of CO2 you have emitted through air travel in the past year and the number of trees required to offset it.</p>
-          <p>For every tree equivalent, we receive in donations, we will plant the corresponding number of trees. Together, we can actively contribute to reforestation efforts and combat climate change.</p>
+          <p style = "font-weight: 500;">For every tree equivalent, we receive in donations, we will plant the corresponding number of trees. Together, we can actively contribute to reforestation efforts and combat climate change.</p>
         </div>
         
         <div class="flex-item-2">
@@ -188,20 +190,19 @@
     <footer>
       <!-- Calculation and Sources -->
       <div class = "footer_container">
-        <p style="font-style: italic; font-size: 10px; color: grey; width: 100%;">
+        <p style="font-style: italic; font-size: 10px; color: #CCCCCC; width: 100%;padding-bottom: 15px;">
           Calculation: 
-          <br>
           [ (Average Domestic Flight Length) * (Average kg of Carbon Emissions Emissions Per Domestic Flight km) ] / [Average emissions collected from a 30 year old White Pine Annually] = [(1214.35)*(.255)] / [1.247]<br>
           <br>
           The average domestic flight length in the US is 1214.35 km (BTS, 2018) and the average emissions per km of domestic flight is 255g per km (Our World In Data, 2018). The average Caron captured from a 30-year-old native Canadian white pine tree is 1.247 kg annually (Tree Plantation, N.A.).<br>
           <br>
-          Sources:<br>
+          Sources:
           BTS. (2018). Bureau of Transportation Statistics. BTS. https://www.transtats.bts.gov/
           <br>
           Our World In Data. (2018). Carbon footprint of travel per kilometer. Our World in Data. https://ourworldindata.org/grapher/carbon-footprint-travel-mode
           <br>
           Tree Plantation. (n.d.). Calculate how much carbon a tree capture. Tree Plantation. https://treeplantation.com/tree-carbon-calculator.html
-        </p stlye= "padding-bottom: 15px">
+        </p>
         <img class="rounded-image" src="https://www.midlandsaerospace.org.uk/images/gallagher-logo-jan21.jpg" alt="Gallagher Logo">
       </div>
     </footer>
